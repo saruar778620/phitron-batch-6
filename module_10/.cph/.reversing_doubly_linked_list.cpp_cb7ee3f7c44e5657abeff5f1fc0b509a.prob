@@ -1,0 +1,1 @@
+{"name":"Local: reversing_doubly_linked_list","url":"e:\\phitron C++\\module_10\\reversing_doubly_linked_list.cpp","tests":[{"id":1758223829354,"input":"1 2 3 4 -1","output":"1 2 3 4\n4 3 2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\phitron C++\\module_10\\reversing_doubly_linked_list.cpp","group":"local","local":true}
