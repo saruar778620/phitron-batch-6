@@ -13,15 +13,6 @@ class Node{
     }
 };
 
-void print_forward(Node* head){
-    Node* tmp = head;
-    while(tmp != NULL){
-        cout<<tmp->val<<" ";
-        tmp = tmp->next;
-    }
-    cout<<"\n";
-}
-
 void insert_at_tail(Node* &head, Node* &tail, int val){
     Node* newnode = new Node(val);
     if(head == NULL){
@@ -36,11 +27,31 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 
 }
 
-void reverse_doubly(Node* head, Node* tail){
-    for(Node* i=head, *j= tail; i != j && i->prev != j; i=i->next,j=j->prev){
-        swap(i->val,j->val);
+//palindrome check
+void palindrome(Node* head, Node*tail){
+    Node* tmp1 = head;
+    Node* tmp2 = tail;
+    bool flag = true;
+
+    while (tmp1 != tmp2 && tmp1->prev != tmp2)
+    {
+        if(tmp1->val != tmp2->val){
+            flag = false;
+        }
+        
+        tmp1 = tmp1->next;
+        tmp2 = tmp2->prev;
     }
+
+    if(flag == false){
+        cout<<"NO"<<"\n";
+    }
+    else{
+        cout<<"YES"<<"\n";
+    }
+    
 }
+
 
 int main(){
     Node* head = NULL;
@@ -56,9 +67,6 @@ int main(){
         insert_at_tail(head,tail,val);
     }
 
-    print_forward(head);
-    reverse_doubly(head,tail);
-    print_forward(head);
-    return 0;
-    
+    palindrome(head,tail);
 }
+
